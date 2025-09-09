@@ -1,0 +1,46 @@
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.table {
+  background-color: white;
+}
+
+.btn {
+  border-radius: 0.375rem;
+}
+
+.form-control, .form-select {
+  border-radius: 0.375rem;
+}
+
+.alert {
+  border-radius: 0.375rem;
+}
+
+.pagination .page-link {
+  border-radius: 0.375rem;
+  margin: 0 0.1rem;
+}
+
+.table-warning {
+  --bs-table-bg: #fff3cd;
+  --bs-table-striped-bg: #f2e7c3;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #e6dbb9;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #ece1be;
+  --bs-table-hover-color: #000;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
+}

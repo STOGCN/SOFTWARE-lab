@@ -1,91 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-09T14:07:56.403369" rpa="false" schemaversion="5">
-<suite id="s1" name="TestTemplate" source="D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\TestTemplate.robot">
-<test id="s1-t1" name="Case1" line="5">
-<kw name="Check Length">
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2025-09-09T14:07:56.488551" level="INFO">Length is 5.</msg>
-<msg time="2025-09-09T14:07:56.488781" level="INFO">${n} = 5</msg>
-<var>${n}</var>
-<arg>${string}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-09-09T14:07:56.488194" elapsed="0.000653"/>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-14T02:17:07.119897" rpa="false" schemaversion="5">
+<suite id="s1" name="Test1" source="D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\test1.robot">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-09-14T02:17:07.264458" level="INFO">=== Suite Setup ===</msg>
+<arg>=== Suite Setup ===</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.264288" elapsed="0.000231"/>
 </kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-09-09T14:07:56.489579" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${n}</arg>
-<arg>${expected_length}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-09-09T14:07:56.489159" elapsed="0.000579"/>
+<test id="s1-t1" name="FILE options" line="21">
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-09-14T02:17:07.265876" level="INFO" html="true">Created file '&lt;a href="file://D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt"&gt;D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt&lt;/a&gt;'.</msg>
+<arg>testfile.txt</arg>
+<arg>This is a test file.</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.265304" elapsed="0.000672"/>
 </kw>
-<arg>Hello</arg>
-<arg>5</arg>
-<status status="PASS" start="2025-09-09T14:07:56.486726" elapsed="0.003187"/>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-09-14T02:17:07.266381" level="INFO" html="true">Getting file '&lt;a href="file://D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt"&gt;D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt&lt;/a&gt;'.</msg>
+<msg time="2025-09-14T02:17:07.274533" level="INFO">${content} = This is a test file.</msg>
+<var>${content}</var>
+<arg>testfile.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.266256" elapsed="0.008339"/>
 </kw>
-<status status="PASS" start="2025-09-09T14:07:56.484881" elapsed="0.005680"/>
+<kw name="Log File" owner="OperatingSystem">
+<msg time="2025-09-14T02:17:07.275147" level="INFO" html="true">Getting file '&lt;a href="file://D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt"&gt;D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt&lt;/a&gt;'.</msg>
+<msg time="2025-09-14T02:17:07.275502" level="INFO">This is a test file.</msg>
+<arg>testfile.txt</arg>
+<doc>Wrapper for `Get File` that also logs the returned file.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.274950" elapsed="0.000651"/>
+</kw>
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2025-09-14T02:17:07.276134" level="INFO" html="true">Removed file '&lt;a href="file://D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt"&gt;D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt&lt;/a&gt;'.</msg>
+<arg>testfile.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.275798" elapsed="0.000406"/>
+</kw>
+<kw name="File Should Not Exist" owner="OperatingSystem">
+<msg time="2025-09-14T02:17:07.276798" level="INFO" html="true">File '&lt;a href="file://D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt"&gt;D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\tests\testfile.txt&lt;/a&gt;' does not exist.</msg>
+<arg>testfile.txt</arg>
+<doc>Fails if the given path points to an existing file.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.276467" elapsed="0.000417"/>
+</kw>
+<status status="PASS" start="2025-09-14T02:17:07.264705" elapsed="0.012450"/>
 </test>
-<test id="s1-t2" name="Case2" line="6">
-<kw name="Check Length">
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2025-09-09T14:07:56.494479" level="INFO">Length is 15.</msg>
-<msg time="2025-09-09T14:07:56.494686" level="INFO">${n} = 15</msg>
-<var>${n}</var>
-<arg>${string}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-09-09T14:07:56.494141" elapsed="0.000601"/>
+<test id="s1-t2" name="LIST &amp; DICTIONARY" line="28">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.278297" level="INFO">@{list1} = [ 1 | 2 | 3 ]</msg>
+<var>@{list1}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.278113" elapsed="0.000214"/>
 </kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-09-09T14:07:56.495707" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${n}</arg>
-<arg>${expected_length}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-09-09T14:07:56.494964" elapsed="0.001004"/>
+<kw name="Append To List" owner="Collections">
+<arg>${list1}</arg>
+<arg>4</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.278524" elapsed="0.000130"/>
 </kw>
-<arg>Robot Framework</arg>
-<arg>15</arg>
-<status status="PASS" start="2025-09-09T14:07:56.493207" elapsed="0.003473"/>
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${list1}</arg>
+<arg>2</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.278822" elapsed="0.000133"/>
 </kw>
-<status status="PASS" start="2025-09-09T14:07:56.492047" elapsed="0.005444"/>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-09-14T02:17:07.279219" level="INFO">${value} = 2</msg>
+<var>${value}</var>
+<arg>${list1}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.279095" elapsed="0.000145"/>
+</kw>
+<status status="PASS" start="2025-09-14T02:17:07.277738" elapsed="0.001655"/>
 </test>
-<test id="s1-t3" name="Case3" line="7">
-<kw name="Check Length">
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2025-09-09T14:07:56.501520" level="INFO">Length is 7.</msg>
-<msg time="2025-09-09T14:07:56.501711" level="INFO">${n} = 7</msg>
-<var>${n}</var>
-<arg>${string}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-09-09T14:07:56.501209" elapsed="0.000677"/>
+<test id="s1-t3" name="IF ELSE" line="35">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.280234" level="INFO">${value} = 10</msg>
+<var>${value}</var>
+<arg>10</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.280102" elapsed="0.000157"/>
 </kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-09-09T14:07:56.503140" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${n}</arg>
-<arg>${expected_length}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-09-09T14:07:56.502431" elapsed="0.000926"/>
+<if>
+<branch type="IF" condition="${value} &gt; 5">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.280686" level="INFO">Value is greater than 5</msg>
+<arg>Value is greater than 5</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.280608" elapsed="0.000112"/>
 </kw>
-<arg>Testing</arg>
-<arg>7</arg>
-<status status="PASS" start="2025-09-09T14:07:56.500234" elapsed="0.003346"/>
+<status status="PASS" start="2025-09-14T02:17:07.280407" elapsed="0.000342"/>
+</branch>
+<branch type="ELSE IF" condition="${value} == 5">
+<kw name="Log" owner="BuiltIn">
+<arg>Value is equal to 5</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-09-14T02:17:07.280850" elapsed="0.000015"/>
 </kw>
-<status status="PASS" start="2025-09-09T14:07:56.499003" elapsed="0.005305"/>
+<status status="NOT RUN" start="2025-09-14T02:17:07.280774" elapsed="0.000116"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Value is less than 5</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-09-14T02:17:07.280973" elapsed="0.000014"/>
+</kw>
+<status status="NOT RUN" start="2025-09-14T02:17:07.280909" elapsed="0.000106"/>
+</branch>
+<status status="PASS" start="2025-09-14T02:17:07.280380" elapsed="0.000651"/>
+</if>
+<status status="PASS" start="2025-09-14T02:17:07.279778" elapsed="0.001408"/>
 </test>
-<status status="PASS" start="2025-09-09T14:07:56.406896" elapsed="0.099493"/>
+<test id="s1-t4" name="FOR LOOP" line="45">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.282221" level="INFO">@{items} = [ item1 | item2 | item3 ]</msg>
+<var>@{items}</var>
+<arg>item1</arg>
+<arg>item2</arg>
+<arg>item3</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.282051" elapsed="0.000196"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.282782" level="INFO">Current item: item1</msg>
+<arg>Current item: ${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.282677" elapsed="0.000150"/>
+</kw>
+<var name="${item}">item1</var>
+<status status="PASS" start="2025-09-14T02:17:07.282598" elapsed="0.000258"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.283076" level="INFO">Current item: item2</msg>
+<arg>Current item: ${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.282989" elapsed="0.000119"/>
+</kw>
+<var name="${item}">item2</var>
+<status status="PASS" start="2025-09-14T02:17:07.282929" elapsed="0.000204"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.283672" level="INFO">Current item: item3</msg>
+<arg>Current item: ${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.283249" elapsed="0.000457"/>
+</kw>
+<var name="${item}">item3</var>
+<status status="PASS" start="2025-09-14T02:17:07.283194" elapsed="0.000540"/>
+</iter>
+<var>${item}</var>
+<value>@{items}</value>
+<status status="PASS" start="2025-09-14T02:17:07.282435" elapsed="0.001324"/>
+</for>
+<status status="PASS" start="2025-09-14T02:17:07.281620" elapsed="0.002327"/>
+</test>
+<test id="s1-t5" name="Access List" line="60">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.285031" level="INFO">First fruit: apple</msg>
+<arg>First fruit: ${Fruits}[0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.284847" elapsed="0.000228"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.285320" level="INFO">Last fruit: orange</msg>
+<arg>Last fruit: ${Fruits}[-1]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.285222" elapsed="0.000129"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${Fruits}</arg>
+<arg>orange</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.285471" elapsed="0.000092"/>
+</kw>
+<kw name="Insert Into List" owner="Collections">
+<arg>${Fruits}</arg>
+<arg>1</arg>
+<arg>grape</arg>
+<doc>Inserts ``value`` into ``list`` to the position specified with ``index``.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.285683" elapsed="0.000095"/>
+</kw>
+<kw name="Remove From List" owner="Collections">
+<arg>${Fruits}</arg>
+<arg>1</arg>
+<doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.285900" elapsed="0.000092"/>
+</kw>
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.286210" level="INFO">['apple', 'banana', 'orange', 'orange']</msg>
+<arg>${Fruits}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.286120" elapsed="0.000120"/>
+</kw>
+<status status="PASS" start="2025-09-14T02:17:07.284490" elapsed="0.001900"/>
+</test>
+<test id="s1-t6" name="Case1" line="69">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.287812" level="INFO">This is case 1</msg>
+<arg>This is case 1</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.287674" elapsed="0.000188"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.288316" level="INFO">a</msg>
+<arg>${a}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.288159" elapsed="0.000199"/>
+</kw>
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.288733" level="INFO">['1', '2', '3']</msg>
+<arg>${t}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.288608" elapsed="0.000158"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.289072" level="INFO">{'a': '1', 'b': '2'}</msg>
+<arg>${dict1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.288952" elapsed="0.000154"/>
+</kw>
+<status status="PASS" start="2025-09-14T02:17:07.286908" elapsed="0.002367"/>
+</test>
+<test id="s1-t7" name="Test Test1" line="75">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-14T02:17:07.290124" level="INFO">This is Test1</msg>
+<arg>This is Test1</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.290014" elapsed="0.000155"/>
+</kw>
+<status status="PASS" start="2025-09-14T02:17:07.289694" elapsed="0.000645"/>
+</test>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-09-14T02:17:07.291391" level="INFO">=== Suite Teardown ===</msg>
+<arg>=== Suite Teardown ===</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-14T02:17:07.291253" elapsed="0.000183"/>
+</kw>
+<status status="PASS" start="2025-09-14T02:17:07.121750" elapsed="0.169720"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="TestTemplate" id="s1" pass="3" fail="0" skip="0">TestTemplate</stat>
+<stat name="Test1" id="s1" pass="7" fail="0" skip="0">Test1</stat>
 </suite>
 </statistics>
 <errors>

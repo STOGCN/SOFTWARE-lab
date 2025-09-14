@@ -1,11 +1,14 @@
 *** Settings ***
+
+
+Suite Setup       Log    === Suite Setup ===
+Suite Teardown    Log    === Suite Teardown ===
+
 Library    Collections
 Library    OperatingSystem
 Library    RequestsLibrary
 Resource   ../resources/Keywords.robot
 
-Suite Setup       Log    === Suite Setup ===
-Suite Teardown    Log    === Suite Teardown ===
 
 *** Variables ***
 ${a}        a
@@ -14,9 +17,13 @@ ${a}        a
 @{Fruits}   apple    banana    orange
 
 *** Test Cases ***
+
 FILE options
     Create File   testfile.txt    This is a test file.
-    ${response}=   
+    ${content}=    Get File    testfile.txt
+    Log File    testfile.txt
+    Remove File    testfile.txt
+    File Should Not Exist    testfile.txt
 
 LIST & DICTIONARY
     @{list1}=    Create List    1    2    3
@@ -41,14 +48,14 @@ FOR LOOP
         Log    Current item: ${item}
     END
 
-TRY EXCEPT
-    TRY
-        Log    Trying to divide by zero
-        ${result}=    Evaluate    1 / 0
-        Log    Result: ${result}
-    EXCEPT    ZeroDivisionError
-        Log    Caught a division by zero error
-    END
+# TRY EXCEPT
+#     TRY
+#         Log    Trying to divide by zero
+#         ${result}=    Evaluate    1 / 0
+#         Log    Result: ${result}
+#     EXCEPT    ZeroDivisionError
+#         Log    Caught a division by zero error
+#     END
 
 Access List
     Log    First fruit: ${Fruits}[0]

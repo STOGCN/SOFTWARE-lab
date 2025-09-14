@@ -1,124 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-05T12:09:05.763318" rpa="false" schemaversion="5">
-<suite id="s1" name="Login Logout" source="D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\login_logout.robot">
-<test id="s1-t1" name="Valid Login and Logout" line="29">
-<kw name="Open Chrome Incognito">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-05T12:09:06.564683" level="INFO">${opts} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002A7FB4BE270&gt;</msg>
-<var>${opts}</var>
-<arg>__import__('selenium').webdriver.ChromeOptions()</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-05T12:09:06.564086" elapsed="0.000689"/>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-11T16:36:32.840296" rpa="false" schemaversion="5">
+<suite id="s1" name="Hello" source="D:\Code-001\STOGCN\SOFTWARE-lab\robot framework (Pop)\robot\hello.robot">
+<test id="s1-t1" name="My test case" line="2">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-11T16:36:32.933111" level="INFO">Hello, Robot Framework!</msg>
+<arg>Hello, Robot Framework!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-11T16:36:32.932737" elapsed="0.000433"/>
 </kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${opts}</arg>
-<arg>add_argument</arg>
-<arg>--incognito</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-09-05T12:09:06.565047" elapsed="0.000283"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${opts}</arg>
-<arg>add_argument</arg>
-<arg>--start-maximized</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-09-05T12:09:06.565539" elapsed="0.000256"/>
-</kw>
-<kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:06.566748" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<arg>Chrome</arg>
-<arg>options=${opts}</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-09-05T12:09:06.565999" elapsed="1.594777"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:08.162984" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
-<arg>${BASE_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-09-05T12:09:08.161436" elapsed="0.708083"/>
-</kw>
-<status status="PASS" start="2025-09-05T12:09:06.562648" elapsed="2.307135"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:08.871926" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
-<arg>${SEL_USERNAME}</arg>
-<arg>${VALID_USER}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T12:09:08.870535" elapsed="0.333274"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:09.205060" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
-<arg>${SEL_PASSWORD}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T12:09:09.204463" elapsed="0.179600"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:09.385114" level="INFO">Clicking button 'id=login-button'.</msg>
-<arg>${SEL_LOGIN}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T12:09:09.384646" elapsed="0.222072"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SEL_INVENTORY}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-05T12:09:09.607438" elapsed="0.049274"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:09.690193" level="INFO">Element 'id=inventory_container' is displayed.</msg>
-<arg>${SEL_INVENTORY}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-05T12:09:09.657462" elapsed="0.032928"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:09.691715" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
-<arg>${SEL_BURGER_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T12:09:09.691089" elapsed="0.138364"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SEL_LOGOUT}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-05T12:09:09.830021" elapsed="0.270315"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:10.102100" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
-<arg>${SEL_LOGOUT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T12:09:10.101331" elapsed="0.206811"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SEL_LOGIN}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-05T12:09:10.309430" elapsed="0.041008"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-09-05T12:09:10.384353" level="INFO">Element 'id=login-button' is displayed.</msg>
-<arg>${SEL_LOGIN}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-05T12:09:10.351214" elapsed="0.033361"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-09-05T12:09:10.385626" elapsed="2.276405"/>
-</kw>
-<tag>smoke</tag>
-<status status="PASS" start="2025-09-05T12:09:06.560896" elapsed="6.102381"/>
+<status status="PASS" start="2025-09-11T16:36:32.931945" elapsed="0.001813"/>
 </test>
-<status status="PASS" start="2025-09-05T12:09:05.766557" elapsed="6.898764"/>
+<test id="s1-t2" name="My second test case" line="5">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-11T16:36:32.935374" level="INFO">This is another test case.</msg>
+<arg>This is another test case.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-11T16:36:32.935244" elapsed="0.000179"/>
+</kw>
+<status status="PASS" start="2025-09-11T16:36:32.934677" elapsed="0.000943"/>
+</test>
+<status status="PASS" start="2025-09-11T16:36:32.842552" elapsed="0.093913"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat name="Login Logout" id="s1" pass="1" fail="0" skip="0">Login Logout</stat>
+<stat name="Hello" id="s1" pass="2" fail="0" skip="0">Hello</stat>
 </suite>
 </statistics>
 <errors>

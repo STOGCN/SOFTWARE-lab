@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "Test": "Hello",
+      "Expected": 5
+    },
+    {
+      "Test": "Robot Framework",
+      "Expected": 15
+    },
+    {
+      "Test": "Testing",
+      "Expected": 7
+    }
+  ]
+}

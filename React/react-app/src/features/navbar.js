@@ -5,7 +5,6 @@ function Navbar() {
     Trendie
   </a>
   <a href="/create-product">Create product</a>
-  
 </header>
   );
 }

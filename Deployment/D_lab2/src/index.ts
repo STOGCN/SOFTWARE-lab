@@ -1,14 +1,16 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import userRoutes from "./UserRoutes";
 
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
-// สร้าง route พื้นฐาน
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, TypeScript + Express!");
+app.use(express.json());
+app.use("/users", userRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Server is running...");
 });
 
-// เริ่ม server
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });

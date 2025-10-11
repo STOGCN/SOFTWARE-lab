@@ -6,12 +6,12 @@ import Home from './features/Home';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Container>
         <Home />
       </Container>
-    </div>
+    </>
   );
 }
 

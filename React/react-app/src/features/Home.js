@@ -16,16 +16,20 @@ function Home() {
   }
 
   return (
-    <Container>
+    <>
       <h1>New Products</h1>
       
-      <ul className="Home__products">
-        {products.map((product) => (
-          <Product key={product.id} item={product} />
-        ))}
-      </ul>
+      {products.length > 0 ? (
+        <ul className="Home__products">
+          {products.map((product) => (
+            <Product key={product.id} item={product} />
+          ))}
+        </ul>
+      ) : (
+        <div>Loading products....</div>
+      )}
       <AddForm addProduct={addProduct} />
-    </Container>
+    </>
   );
 }
 

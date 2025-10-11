@@ -15,7 +15,7 @@ function AddForm({ addProduct }) {
   };
 
   return (
-    <div>
+    <>
       <h1>Add Product</h1>
       <form id="create-form" onSubmit={handleSubmit}>
         <div className="input-group">
@@ -53,7 +53,7 @@ function AddForm({ addProduct }) {
 
         <button type="submit">Add product</button>
       </form>
-    </div>
+    </>
   );
 }
 

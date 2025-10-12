@@ -1,35 +1,50 @@
-import React, { useState } from "react";
-import axios from 'axios';
-import data from "../app/data";
+import React, { useEffect, useReducer } from "react";
+import axios from "axios";
 import Product from "./Product";
 import AddForm from "./Product/AddForm";
-import Container from "./Container";
 
 // ตัวนับ id สินค้าล่าสุด (เริ่มจาก 9)
 let currentProductId = 9;
 
-function Home() {
-  const [products, setProducts] = useState(data);
+// Reducer สำหรับจัดการ state ของ products
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "GET_PRODUCTS":
+      return action.payload;
+    case "ADD_PRODUCT":
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+};
 
-useEffect(() => {
+function Home() {
+  const [products, dispatch] = useReducer(reducer, []);
+
+  useEffect(() => {
     async function getProducts() {
-      const products = await axios.get('https://68e9fc47f1eeb3f856e5a63c.mockapi.io/products');
-      setProducts(products.data);
+      try {
+        const res = await axios.get(
+          "https://68e9fc47f1eeb3f856e5a63c.mockapi.io/products"
+        );
+        dispatch({ type: "GET_PRODUCTS", payload: res.data });
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     }
 
     getProducts();
-  }, []); // Put the empty array to make sure that the hook is executed only once
-
+  }, []);
 
   function addProduct(product) {
     const newProduct = { id: ++currentProductId, ...product };
-    setProducts([...products, newProduct]);
+    dispatch({ type: "ADD_PRODUCT", payload: newProduct });
   }
 
   return (
-    <>
+    <div className="home-container">
       <h1>New Products</h1>
-      
+
       {products.length > 0 ? (
         <ul className="Home__products">
           {products.map((product) => (
@@ -39,8 +54,9 @@ useEffect(() => {
       ) : (
         <div>Loading products....</div>
       )}
+
       <AddForm addProduct={addProduct} />
-    </>
+    </div>
   );
 }
 

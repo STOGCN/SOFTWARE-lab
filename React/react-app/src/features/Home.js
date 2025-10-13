@@ -1,5 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import axios from "axios";
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Product from "./Product";
 import AddForm from "./Product/AddForm";
 
@@ -18,7 +20,7 @@ const reducer = (state, action) => {
   }
 };
 
-function Home() {
+function Home({ className }) {
   const [products, dispatch] = useReducer(reducer, []);
 
   useEffect(() => {
@@ -42,7 +44,7 @@ function Home() {
   }
 
   return (
-    <div className="home-container">
+    <div className={className}>
       <h1>New Products</h1>
 
       {products.length > 0 ? (
@@ -60,4 +62,17 @@ function Home() {
   );
 }
 
-export default Home;
+Home.propTypes = {
+  className: PropTypes.string.isRequired,
+};
+
+export default styled(Home)`
+  .Home__products {
+    display: flex;
+    flex-wrap: wrap;
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0 -12px;
+  }
+`;

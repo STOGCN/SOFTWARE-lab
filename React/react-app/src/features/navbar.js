@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Navbar({ className }) {
   return (
 <header className={className}>
-  <a href="/" className="brand">
-    Trendie
-  </a>
-  <a href="/create-product">Create product</a>
+   <Link to="/" className="brand">
+        Trendie
+      </Link>
+      <Link to="/create-product">Create product</Link>
 </header>
   );
 }

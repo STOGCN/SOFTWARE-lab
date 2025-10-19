@@ -8,18 +8,20 @@ import Home from './features/Home';
 import GlobalStyle from './features/GlobalStyle';
 import AddForm from './features/Product/AddForm';
 import UpdateForm from './features/Product/UpdateForm';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProducts } from './features/Product/actions';
 
 function App() {
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.products);
 
   useEffect(() => {
-    async function fetchProducts() {
-      const response = await axios.get('https://68e9fc47f1eeb3f856e5a63c.mockapi.io/products');
-      setProducts(response.data);
+    async function getProducts() {
+      const res = await axios.get('https://68e9f9cff1eeb3f856e597f8.mockapi.io/api/products');
+      dispatch(fetchProducts(res.data));
     }
-
-    fetchProducts();
-  }, []);
+    getProducts();
+  }, [dispatch]);
 
   return (
    <>

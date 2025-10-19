@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addProduct } from './actions'
 
 function AddForm({ addProduct }) {
   const [name, setName] = useState("");
   const [imageURL, setImageURL] = useState("");
   const [type, setType] = useState("");
 
-  const handleSubmit = (e) => {
+ const dispatch = useDispatch(); // ใช้แทน prop addProduct
+  const navigate = useNavigate();
+
+ const handleSubmit = (e) => {
     e.preventDefault();
-    addProduct({ name, type, imageURL });
-    setName("");
-    setImageURL("");
-    setType("");
+    dispatch(addProduct({ name, type, imageURL })); // <-- ส่ง action ไป reducer
+    navigate('/'); // กลับหน้า home
   };
 
   return (

@@ -49,7 +49,7 @@
   align-items: center;
   background-color: #bbdefb;
   border-radius: 20px;
-  border: 1px solid #90caf9;
+  border: 1px solid #66A3FF;
   padding: 2px;
   font-family: 'Prompt', sans-serif;
 }
@@ -57,14 +57,15 @@
 .version-badge {
   background-color: #ffffff;
   color: #424242;
-  padding: 4px 12px;
+  padding: 3px 11px;
+  border: 1px solid #66A3FF;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
 }
 
 .version-text {
-  color: #0d47a1;
+  color: #424242;
   padding: 4px 12px;
   font-size: 0.8rem;
   font-weight: 500;

@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+app-header {
+  flex: 0 0 auto;
+  z-index: 10;
+}
+
+.main-body {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  overflow: hidden; /* Stop page-level scrolling, let content area scroll if needed */
+  position: relative;
+}
+
+app-sidebar {
+  flex: 0 0 auto;
+  z-index: 5;
+  height: 100%;
+}
+
+.content-area {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

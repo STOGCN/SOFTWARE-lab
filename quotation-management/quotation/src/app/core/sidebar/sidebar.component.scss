@@ -1,0 +1,103 @@
+:host {
+  height: 100%;
+  display: block;
+}
+
+.sidebar-container {
+  background-color: #0b4a8b; /* Dark blue color from design */
+  height: 100%;
+  width: 76px; /* Icon-only width for the collapsed state to start */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: width 0.3s ease;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+
+  &.expanded {
+    width: 240px; /* Adjust according to further design needs, defaulting to icon-only for now but setting up class*/
+    /* Currently no full width elements exist, so rendering same as collapsed */
+    /* width: 76px; // Keep simple if it only ever shrinks to icon */
+    // Let's stick with the design width which looks icon-only focused.
+    width: 76px; 
+  }
+
+  &.collapsed {
+    width: 76px;
+  }
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* Reduced gap from 1.5rem */
+  width: 100%;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.menu-item {
+  color: #c9d8e7; /* Light grey/blue for inactive items */
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    color: #ffffff;
+    background-color: #4a7bb2; /* Highlight color */
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); /* Subtle inner border */
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.settings-item {
+  margin-top: auto;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 1.5rem; /* Aligned with top section */
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #0b4a8b;
+  z-index: 10;
+  padding: 0;
+  
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}

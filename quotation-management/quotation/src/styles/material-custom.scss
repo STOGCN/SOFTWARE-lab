@@ -1,0 +1,49 @@
+@use '@angular/material' as mat;
+
+/* 
+  Material Customization Layer 
+  Overrides default MDC tokens using CSS custom properties 
+  to match the precise UI design spec.
+*/
+
+:root {
+  /* --- Typography Overrides (Using Prompt font) --- */
+  --mat-sys-body-large-font: 'Prompt', sans-serif;
+  --mat-sys-body-medium-font: 'Prompt', sans-serif;
+  --mat-sys-body-small-font: 'Prompt', sans-serif;
+  --mat-sys-title-large-font: 'Prompt', sans-serif;
+  --mat-sys-title-medium-font: 'Prompt', sans-serif;
+  --mat-sys-title-small-font: 'Prompt', sans-serif;
+  --mat-sys-label-large-font: 'Prompt', sans-serif;
+  --mat-sys-label-medium-font: 'Prompt', sans-serif;
+  --mat-sys-label-small-font: 'Prompt', sans-serif;
+
+  /* --- Table Overrides --- */
+  // Adjust table background to match our container color
+  --mat-table-background-color: #f7f9fc;
+  // Make row borders subtly grey
+  --mat-table-row-item-outline-color: #e0e0e0;
+  // Font sizes for table
+  --mat-table-header-headline-font: 'Prompt', sans-serif;
+  --mat-table-header-headline-size: 0.75rem;
+  --mat-table-row-item-label-text-font: 'Prompt', sans-serif;
+  --mat-table-row-item-label-text-size: 0.85rem;
+
+  /* --- Tabs Overrides --- */
+  // Override tab indicator
+  --mdc-tab-indicator-active-indicator-color: #dfa231; /* Golden yellow */
+  // Tab typography
+  --mdc-tab-label-text-font: 'Prompt', sans-serif;
+  
+  /* --- Paginator Overrides --- */
+  // Inherit standard font for paginator
+  --mat-paginator-container-text-font: 'Prompt', sans-serif;
+  --mat-paginator-container-text-size: 0.85rem;
+}
+
+/* 
+  Global mixin application if needed 
+  (Usually we just rely on the CSS vars in :root for M3)
+*/
+// We include the theme here if it wasn't included elsewhere, but 
+// usually it's handled in angular.json or styles.scss.

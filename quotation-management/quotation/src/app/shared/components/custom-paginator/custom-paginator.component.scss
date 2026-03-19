@@ -1,0 +1,59 @@
+.custom-paginator-wrapper {
+  mat-paginator.mat-mdc-paginator {
+    background: transparent;
+    color: #424242;
+    
+    .mat-mdc-paginator-range-label {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #666666;
+    }
+
+    .mat-mdc-paginator-page-size-label {
+      font-size: 0.85rem;
+      color: #666666;
+    }
+
+    .mat-mdc-paginator-range-actions {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    // High specificity to avoid !important
+    button.mat-mdc-icon-button.mat-mdc-button-base {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border-radius: 6px;
+      background-color: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      color: #666;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s;
+
+      .mat-mdc-button-touch-target {
+        display: none; // Remove touch offset
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+      }
+
+      &.mat-mdc-icon-button[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      &:not([disabled]):hover {
+        background-color: #e3ebf3;
+        color: #0b4a8b;
+        border-color: #c0d3e5;
+      }
+    }
+  }
+}

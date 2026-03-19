@@ -6,6 +6,11 @@
         <ng-container [ngSwitch]="col.type">
           <!-- Text Default -->
           <span *ngSwitchDefault>{{ element[col.key] }}</span>
+
+          <!-- Checkbox -->
+          <div *ngSwitchCase="'checkbox'">
+             <input type="checkbox" class="custom-checkbox">
+          </div>
           
           <!-- Factory Info -->
           <div *ngSwitchCase="'factory'" class="factory-info">

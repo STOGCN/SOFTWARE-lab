@@ -6,7 +6,7 @@ export interface TableColumn {
   key: string;
   label: string;
   width?: string;
-  type?: 'text' | 'badge' | 'factory' | 'actions';
+  type?: 'text' | 'badge' | 'factory' | 'actions' | 'checkbox';
 }
 
 @Component({

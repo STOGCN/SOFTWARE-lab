@@ -4,10 +4,24 @@
   margin-top: 1rem;
 }
 
-.table-container {
-  background-color: #f7f9fc;
-  border-radius: 8px;
+.quotation-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+app-custom-tabs {
+  margin-bottom: -1px; // Pull tabs down by 1px to overlap the card border below
+  position: relative;
+  z-index: 2; // Keep tabs above table card
+}
+
+.table-card {
+  background-color: #ffffff;
+  border-radius: 0 8px 8px 8px;
+  /* Remove top-left rounding so active tab blends seamlessly */
   border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03); // Slight depth to enhance Material look
+  position: relative;
+  z-index: 1;
 }

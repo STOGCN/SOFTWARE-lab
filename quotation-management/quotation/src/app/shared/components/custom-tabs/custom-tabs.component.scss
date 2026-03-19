@@ -1,26 +1,28 @@
 .custom-tabs-wrapper {
   /* Using specific targeting with ViewEncapsulation.None */
-  
+
   .mat-mdc-tab-header {
-    background-color: #d8dee6; /* Dark grey gap background */
+    background-color: transparent;
+    /* No container background */
     padding-top: 6px;
-    padding-left: 2px;
-    padding-right: 2px;
-    border-bottom: 1px solid #e0e0e0;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: none;
+    /* No bottom border */
   }
 
   .mat-mdc-tab-labels {
-    gap: 3px; 
-    align-items: flex-end; /* Ensure tabs align to the bottom */
+    gap: 4px;
+    align-items: flex-end;
+    /* Ensure tabs align to the bottom */
   }
 
   /* Style each inactive tab block */
   .mdc-tab {
     flex: 1;
     min-width: 120px;
-    background-color: #e7ecf2; 
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    background-color: transparent;
+    /* No background for inactive tabs */
     padding: 0;
     height: auto;
     border-left: 3px solid transparent; // Reserve space for left border
@@ -28,13 +30,17 @@
 
   /* Style active tab */
   .mdc-tab--active {
-    background-color: #f7f9fc;
-    border-left: 3px solid #dfa231; /* Golden vertical left line */
+    background-color: #ffffff;
+    /* pure white */
+    border-left: 3px solid #dfa231;
+    /* Golden vertical left line */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
 
   /* Remove default bottom active indicator line entirely */
   .mdc-tab-indicator__content--underline {
-    display: none !important; 
+    display: none !important;
   }
 
   /* Internal tab label layout */
@@ -47,7 +53,7 @@
     color: #757575;
     position: relative;
     box-sizing: border-box;
-    
+
     &.is-active {
       color: #0b4a8b;
     }
@@ -60,12 +66,28 @@
       justify-content: center;
       align-items: center;
       background-color: #ffffff;
-      
-      &.icon-all { background: #0b4a8b; color: #fff; }
-      &.icon-draft { color: #0b4a8b; }
-      &.icon-edit { color: #0b4a8b; }
-      &.icon-pending { color: #0b4a8b; }
-      &.icon-completed { background: #0b4a8b; color: #fff; }
+
+      &.icon-all {
+        background: #0b4a8b;
+        color: #fff;
+      }
+
+      &.icon-draft {
+        color: #0b4a8b;
+      }
+
+      &.icon-edit {
+        color: #0b4a8b;
+      }
+
+      &.icon-pending {
+        color: #0b4a8b;
+      }
+
+      &.icon-completed {
+        background: #0b4a8b;
+        color: #fff;
+      }
     }
 
     .tab-text-stack {
@@ -73,8 +95,17 @@
       flex-direction: column;
       align-items: flex-start;
 
-      .tab-title { font-weight: 600; font-size: 0.95rem; line-height: 1.2;}
-      .tab-count { font-size: 0.8rem; opacity: 0.8; margin-top: 2px; }
+      .tab-title {
+        font-weight: 600;
+        font-size: 0.95rem;
+        line-height: 1.2;
+      }
+
+      .tab-count {
+        font-size: 0.8rem;
+        opacity: 0.8;
+        margin-top: 2px;
+      }
     }
 
     .notification-dot {

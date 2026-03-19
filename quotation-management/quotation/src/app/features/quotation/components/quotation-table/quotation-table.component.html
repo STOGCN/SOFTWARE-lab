@@ -1,4 +1,4 @@
-<div class="table-container">
+<div class="quotation-layout">
   
   <app-custom-tabs 
     [tabs]="tabs" 
@@ -6,16 +6,18 @@
     (selectedIndexChange)="onTabChanged($event)">
   </app-custom-tabs>
 
-  <app-custom-table 
-    [data]="tableData" 
-    [columns]="tableColumns">
-  </app-custom-table>
+  <div class="table-card">
+    <app-custom-table 
+      [data]="tableData" 
+      [columns]="tableColumns">
+    </app-custom-table>
 
-  <app-custom-paginator
-    [length]="pageLength"
-    [pageSize]="pageSize"
-    [pageIndex]="pageIndex"
-    (pageInfoChanged)="onPageChanged($event)">
-  </app-custom-paginator>
+    <app-custom-paginator
+      [length]="pageLength"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      (pageInfoChanged)="onPageChanged($event)">
+    </app-custom-paginator>
+  </div>
 
 </div>

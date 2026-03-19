@@ -37,7 +37,8 @@ export class QuotationTableComponent {
 
   // Table
   tableColumns: TableColumn[] = [
-    { key: 'factoryName', label: 'ชื่อโรงงาน/เลขรับแบบ', width: '30%', type: 'factory' },
+    { key: 'checkbox', label: '', width: '5%', type: 'checkbox' },
+    { key: 'factoryName', label: 'ชื่อโรงงาน/เลขรับแบบ', width: '25%', type: 'factory' },
     { key: 'productName', label: 'ชื่อสินค้า', width: '25%', type: 'text' },
     { key: 'requester', label: 'ผู้รับแบบแจ้ง', width: '15%', type: 'text' },
     { key: 'updateDate', label: 'วันที่อัปเดตล่าสุด', width: '15%', type: 'text' },

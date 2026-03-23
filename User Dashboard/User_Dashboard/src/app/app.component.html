@@ -1,15 +1,17 @@
 <div class="app-layout">
+  <!-- Top Navigation -->
   <app-header></app-header>
   
-  <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="side" opened class="app-sidenav">
+  <!-- Main Dashboard Body (Light Blue Background) -->
+  <div class="dashboard-body">
+    <!-- Floating Sidebar Card -->
+    <aside class="sidebar-container">
       <app-sidebar></app-sidebar>
-    </mat-sidenav>
+    </aside>
     
-    <mat-sidenav-content class="app-content">
-      <main class="main-content">
-        <router-outlet></router-outlet>
-      </main>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+    <!-- Main Content Area -->
+    <main class="main-content-container">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>

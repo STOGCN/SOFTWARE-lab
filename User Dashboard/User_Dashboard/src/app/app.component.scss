@@ -1,25 +1,42 @@
 .app-layout {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f0f7fe; /* Very light blue background covering the whole page */
 }
 
-.sidenav-container {
+/* Dashboard Wrapper */
+.dashboard-body {
   flex: 1;
-  background-color: #f7f9fa; /* Matches the light grayish-blue background in mockup */
-}
-
-.app-sidenav {
-  width: 270px; /* Matched to typical sidebar size */
-  border-right: none;
-  background-color: transparent;
-}
-
-.app-content {
-  padding: 32px;
-}
-
-.main-content {
-  max-width: 1400px;
+  display: flex;
+  max-width: 1500px;
   margin: 0 auto;
+  width: 100%;
+  padding: 32px 40px;
+  box-sizing: border-box;
+  gap: 32px; /* Spacing between sidebar and main content */
+}
+
+/* Container for the Left Card */
+.sidebar-container {
+  width: 290px;
+  flex-shrink: 0;
+}
+
+/* Container for the Right Area */
+.main-content-container {
+  flex: 1;
+  min-width: 0; /* Prevents blowout */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .dashboard-body {
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+  }
+  .sidebar-container {
+    width: 100%;
+  }
 }

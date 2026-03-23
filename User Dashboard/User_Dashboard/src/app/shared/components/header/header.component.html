@@ -1,0 +1,55 @@
+<mat-toolbar class="header-toolbar">
+  <!-- Left Side: Logo Area -->
+  <div class="logo-container" routerLink="/">
+    <img 
+      src="assets/images/logo/Logo_of_the_Excise_Department.svg-removebg-preview.png" 
+      alt="โลโก้กรมสรรพสามิต" 
+      class="excise-logo" 
+    />
+  </div>
+
+  <!-- Middle: Navigation Links -->
+  <nav class="nav-links">
+    @for (item of menuItems; track item.label) {
+      <a mat-button [routerLink]="item.link" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: item.link === '/'}">
+        {{ item.label }}
+      </a>
+      @if (!$last) {
+        <div class="divider"></div>
+      }
+    }
+  </nav>
+
+  <!-- Push actions to the right -->
+  <span class="spacer"></span>
+
+  <!-- Right Side: Notifications & Profile -->
+  <div class="actions">
+    <!-- Notification Bell -->
+    <button mat-icon-button aria-label="Notifications" class="noti-btn">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    
+    <!-- Profile Dropdown -->
+    <button mat-button [matMenuTriggerFor]="profileMenu" class="profile-btn">
+      <div class="profile-content">
+        <div class="avatar-placeholder">
+          <!-- You can replace this person icon with an actual img tag later if available -->
+          <mat-icon>person</mat-icon>
+        </div>
+        <span class="profile-name">โปรไฟล์</span>
+        <mat-icon class="dropdown-icon">expand_more</mat-icon>
+      </div>
+    </button>
+    <mat-menu #profileMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>บัญชีผู้ใช้</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>ออกจากระบบ</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

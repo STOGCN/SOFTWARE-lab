@@ -1,0 +1,121 @@
+.header-toolbar {
+  background-color: #ffffff;
+  color: #1c528e;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 64px;
+  border-bottom: 4px solid #f0f4f8; /* Soft blue bottom barrier as seen in the mockup */
+}
+
+/* Logo Alignment */
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 24px;
+
+  .excise-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+  }
+}
+
+/* Primary Navigation Styles */
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  a[mat-button] {
+    font-size: 14px;
+    font-weight: 500;
+    color: #175e9b;
+    min-width: unset;
+    padding: 0 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  a[mat-button]:hover {
+    background-color: rgba(23, 94, 155, 0.05);
+    color: #0b3d8f;
+  }
+  
+  .active-link {
+    color: #0b3d8f !important;
+    font-weight: 600;
+  }
+}
+
+/* Vertical divider between menu items */
+.divider {
+  width: 1px;
+  height: 16px;
+  background-color: #d1d5db;
+  margin: 0;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Right-side action buttons */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .noti-btn {
+    color: #333333;
+    mat-icon {
+      font-size: 22px;
+    }
+  }
+
+  .profile-btn {
+    color: #1c528e;
+    border-radius: 24px;
+    padding: 2px 12px 2px 4px;
+    
+    .profile-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar-placeholder {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      
+      mat-icon {
+        color: #757575;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .profile-name {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .dropdown-icon {
+      margin-left: 0;
+      color: #1c528e;
+    }
+  }
+
+  .profile-btn:hover {
+    background-color: rgba(28, 82, 142, 0.05);
+  }
+}

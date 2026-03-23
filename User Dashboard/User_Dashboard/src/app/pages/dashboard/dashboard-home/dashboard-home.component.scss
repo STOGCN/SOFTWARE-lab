@@ -1,0 +1,273 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Alert Banner */
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0f2fe; /* Light blue */
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+
+  .alert-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .alert-icon {
+      color: #0284c7;
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+    }
+
+    .alert-text {
+      color: #0369a1;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+
+  .alert-btn {
+    background-color: #0369a1;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #0284c7;
+    }
+  }
+}
+
+/* Section Headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c528e;
+    margin: 0;
+
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      margin-left: 8px;
+    }
+  }
+
+  .see-all {
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    
+    &:hover {
+      color: #1c528e;
+    }
+  }
+}
+
+/* Mat Card Resets */
+mat-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    transform: translateY(-2px);
+  }
+}
+
+/* Status Tracking Grid */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  .status-card {
+    padding: 16px 20px;
+
+    .card-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      
+      mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .status-title {
+        font-weight: 600;
+        color: #333;
+        font-size: 14px;
+      }
+    }
+
+    .count-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .count {
+        font-weight: 500;
+        color: #333;
+        font-size: 14px;
+      }
+
+      .unit {
+        color: #666;
+        font-size: 13px;
+      }
+
+      .arrow {
+        color: #999;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+/* Service Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  .service-card {
+    padding: 16px;
+
+    .card-content {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .service-icon-bg {
+      background-color: #f1f5f9;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .service-icon {
+        color: #64748b;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .service-text {
+      h3 {
+        margin: 0 0 4px 0;
+        font-size: 15px;
+        font-weight: 600;
+        color: #333;
+      }
+      p {
+        margin: 0;
+        font-size: 12px;
+        color: #888;
+      }
+    }
+  }
+}
+
+/* News Grid */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  .news-card {
+    padding: 8px 0;
+    cursor: default;
+    
+    &:hover {
+      transform: none;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .warning-pill {
+      background-color: #fffbeb;
+      color: #b45309;
+    }
+
+    .info-pill {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 8px 0;
+      line-height: 1.4;
+    }
+
+    .news-desc {
+      font-size: 13px;
+      color: #777;
+      margin: 0;
+    }
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .status-grid, .services-grid, .news-grid {
+    grid-template-columns: 1fr;
+  }
+  .alert-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

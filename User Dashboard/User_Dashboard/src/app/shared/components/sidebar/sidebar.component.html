@@ -1,0 +1,45 @@
+<div class="sidebar-wrapper">
+  
+  <!-- Company Information -->
+  <div class="company-section">
+    <div class="company-header-row">
+      <span class="section-title">ข้อมูลบริษัท</span>
+      <a href="#" class="see-all-link">ดูทั้งหมด</a>
+    </div>
+    <div class="company-details">
+      <div class="company-name">บริษัท สรรพสามิต จำกัด</div>
+      <div class="company-id">0-9920-02060-03-9</div>
+    </div>
+  </div>
+
+  <div class="menu-divider"></div>
+
+  <!-- Product Menu -->
+  <div class="menu-section">
+    <div class="section-title">ข้อมูลผลิตภัณฑ์</div>
+    <mat-nav-list class="custom-nav-list">
+      @for (item of productMenu; track item.label) {
+        <a mat-list-item [routerLink]="item.link" routerLinkActive="active" matRipple class="menu-item">
+          <span class="item-label">{{ item.label }}</span>
+          <mat-icon class="item-arrow">chevron_right</mat-icon>
+        </a>
+      }
+    </mat-nav-list>
+  </div>
+
+  <div class="menu-divider"></div>
+
+  <!-- System Menu -->
+  <div class="menu-section">
+    <div class="section-title">ข้อมูลในระบบ</div>
+    <mat-nav-list class="custom-nav-list">
+      @for (item of systemMenu; track item.label) {
+        <a mat-list-item [routerLink]="item.link" routerLinkActive="active" matRipple class="menu-item">
+          <span class="item-label">{{ item.label }}</span>
+          <mat-icon class="item-arrow">chevron_right</mat-icon>
+        </a>
+      }
+    </mat-nav-list>
+  </div>
+
+</div>

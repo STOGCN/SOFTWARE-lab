@@ -1,0 +1,25 @@
+.app-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav-container {
+  flex: 1;
+  background-color: #f7f9fa; /* Matches the light grayish-blue background in mockup */
+}
+
+.app-sidenav {
+  width: 270px; /* Matched to typical sidebar size */
+  border-right: none;
+  background-color: transparent;
+}
+
+.app-content {
+  padding: 32px;
+}
+
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}

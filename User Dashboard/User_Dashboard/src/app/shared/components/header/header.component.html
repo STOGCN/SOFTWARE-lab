@@ -9,7 +9,7 @@
   </div>
 
   <!-- Middle: Navigation Links -->
-  <nav class="nav-links">
+  <nav class="nav-links desktop-nav">
     @for (item of menuItems; track item.label) {
       <a mat-button [routerLink]="item.link" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: item.link === '/'}">
         {{ item.label }}
@@ -25,6 +25,18 @@
 
   <!-- Right Side: Notifications & Profile -->
   <div class="actions">
+    <!-- Mobile Hamburger Menu -->
+    <button mat-icon-button class="mobile-menu-btn" [matMenuTriggerFor]="mobileMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #mobileMenu="matMenu">
+      @for (item of menuItems; track item.label) {
+        <a mat-menu-item [routerLink]="item.link" routerLinkActive="active-menu-item" [routerLinkActiveOptions]="{exact: item.link === '/'}">
+          {{ item.label }}
+        </a>
+      }
+    </mat-menu>
+
     <!-- Notification Bell -->
     <button mat-icon-button aria-label="Notifications" class="noti-btn">
       <mat-icon>notifications</mat-icon>

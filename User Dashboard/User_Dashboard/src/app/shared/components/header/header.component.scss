@@ -119,3 +119,67 @@
     background-color: rgba(28, 82, 142, 0.05);
   }
 }
+
+/* --- Responsive Adjustments --- */
+
+.mobile-menu-btn {
+  display: none;
+  color: #1c528e;
+}
+
+/* Active mobile menu option */
+::ng-deep .active-menu-item {
+  color: #0b3d8f !important;
+  font-weight: 600 !important;
+  background-color: rgba(11, 61, 143, 0.05) !important;
+}
+
+@media (max-width: 1250px) {
+  /* On medium-large screens, navigation links might be too squished */
+  .nav-links a[mat-button] {
+    padding: 0 8px;
+    font-size: 13px;
+  }
+  .header-toolbar {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Hide desktop navigation on tablets/mobile */
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* Show hamburger menu */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Reduce logo size slightly */
+  .logo-container .excise-logo {
+    height: 40px;
+  }
+
+  .logo-container {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Further adjustments for mobile phones */
+  .header-toolbar {
+    padding: 0 16px;
+  }
+  
+  .actions {
+    gap: 8px;
+  }
+  
+  .actions .profile-btn {
+    padding: 2px 4px; /* Less padding */
+    .profile-name, .dropdown-icon {
+      display: none; /* Hide name and dropdown arrow, just show avatar */
+    }
+  }
+}

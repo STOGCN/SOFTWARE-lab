@@ -38,5 +38,10 @@
   }
   .sidebar-container {
     width: 100%;
+    order: 2; /* ย้าย Sidebar ลงมาด่านล่างสุด */
+  }
+  .main-content-container {
+    width: 100%;
+    order: 1; /* ดันเนื้อหาหลัก (dashboard-home) ขึ้นไปด้านบนสุด */
   }
 }

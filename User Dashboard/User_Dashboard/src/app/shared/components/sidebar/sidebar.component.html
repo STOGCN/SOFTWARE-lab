@@ -20,8 +20,10 @@
     <mat-nav-list class="custom-nav-list">
       @for (item of productMenu; track item.label) {
         <a mat-list-item [routerLink]="item.link" routerLinkActive="active" matRipple class="menu-item">
-          <span class="item-label">{{ item.label }}</span>
-          <mat-icon class="item-arrow">chevron_right</mat-icon>
+          <div class="item-content-wrapper">
+            <span class="item-label">{{ item.label }}</span>
+            <mat-icon class="item-arrow">chevron_right</mat-icon>
+          </div>
         </a>
       }
     </mat-nav-list>
@@ -35,8 +37,10 @@
     <mat-nav-list class="custom-nav-list">
       @for (item of systemMenu; track item.label) {
         <a mat-list-item [routerLink]="item.link" routerLinkActive="active" matRipple class="menu-item">
-          <span class="item-label">{{ item.label }}</span>
-          <mat-icon class="item-arrow">chevron_right</mat-icon>
+          <div class="item-content-wrapper">
+            <span class="item-label">{{ item.label }}</span>
+            <mat-icon class="item-arrow">chevron_right</mat-icon>
+          </div>
         </a>
       }
     </mat-nav-list>

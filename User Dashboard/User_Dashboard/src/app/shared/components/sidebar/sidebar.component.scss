@@ -8,6 +8,13 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
+.item-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .section-title {
   font-size: 14px;
   font-weight: 700;
@@ -45,7 +52,7 @@
     }
     .company-id {
       font-size: 13px;
-      color: #666;
+      color: #444242;
     }
   }
 }
@@ -76,10 +83,13 @@
     transition: background-color 0.2s;
     
     .mdc-list-item__content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       width: 100%;
+      padding: 0 8px;
+    }
+
+    .mdc-list-item__primary-text {
+      width: 100%;
+      display: block;
     }
 
     &:hover {
@@ -106,6 +116,8 @@
   .item-label {
     font-size: 14px;
     font-weight: 500;
+    color: #035b96;
+
   }
   
   .item-arrow {
